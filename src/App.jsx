@@ -76,6 +76,16 @@ export default function Game() {
     let description;
 
     if (move > 0) {
+      if (move === currentMove) {
+        description = 'You are at move #' + move;
+
+        return (
+          <li key={move}>
+            <span>{description}</span>
+          </li>
+        );
+      }
+
       description = 'Go to move #' + move;
     } else {
       description = 'Go to game start';
